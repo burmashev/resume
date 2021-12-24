@@ -1,4 +1,4 @@
-name: Create a PDF
+name: Create a PDF and push it to repo
 
 on:
   push:
@@ -18,3 +18,14 @@ jobs:
       run: docker build . --file Dockerfile --tag main_image
     - name: Run container
       run: docker run --name main_container main_image
+    - name: Get PDF from container
+      run: docker cp main_container:./main.pdf .
+    - name: Push PDF
+      run: |
+        git config --global user.name 'Grigory Burmashev'
+        git config --global user.email 'Burmashev@users.noreply.github.com'
+        git fetch 
+        git checkout pdf
+        git add .
+        git commit -m "Push PDF"
+        git push
