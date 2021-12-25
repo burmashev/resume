@@ -1,3 +1,3 @@
 # resume
-Бурмашев Григорий, группа 208
-https://burmashev.github.io/resume/main.pdf
+### Бурмашев Григорий, группа 208 
+- Ссылка: https://burmashev.github.io/resume/main.pdf
