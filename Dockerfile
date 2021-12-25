@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
 COPY ./CV/main.tex /resume/
+
 RUN apt-get update -y
 
 RUN DEBIAN_FRONTEND='noninteractive' apt-get install -y \ 
@@ -10,4 +11,4 @@ RUN DEBIAN_FRONTEND='noninteractive' apt-get install -y \
  texlive-fonts-extra \
  texlive-latex-extra
 
-CMD pdflatex ./resume/main.tex -interactiop=nonstopmode -output-directory=./resume/
+CMD pdflatex ./resume/main.tex -interactiop=nonstopmode
